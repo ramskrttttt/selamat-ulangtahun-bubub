@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 23rd Birthday, Diyanti 🤍</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --sand:#e9dcc8; --cream:#fffaf1; --sea:#789da5;
+  --deep:#315b66; --foam:#dce9e7; --brown:#776453; --gold:#c5a572;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+body {min-height:100vh;background:var(--cream);color:var(--deep);font-family:Poppins,sans-serif;overflow-x:hidden}
+button,input {font:inherit}
+button {cursor:pointer}
+.page {display:none;min-height:100vh;padding:45px 18px;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+.page.active {display:flex;animation:reveal .7s ease both}
+.container {width:100%;max-width:900px;margin:auto;position:relative;z-index:2}
+h1,h2,h3 {font-family:"Cormorant Garamond",serif;font-weight:500;line-height:1.1}
+h1 {font-size:clamp(43px,9vw,80px)}
+h2 {font-size:clamp(38px,7vw,64px)}
+h3 {font-size:30px}
+.italic {color:var(--sea);font-style:italic}
+.eyebrow {font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:22px;color:var(--brown)}
+.description {max-width:550px;margin:22px auto;line-height:1.9;font-size:13px;font-weight:300}
+.footer {margin-top:35px;font-size:9px;letter-spacing:3px;color:var(--brown)}
+.btn {border:1px solid var(--deep);border-radius:30px;background:var(--deep);color:white;padding:13px 24px;font-size:11px;letter-spacing:1px;transition:.3s}
+.btn:hover {background:var(--sea);transform:translateY(-3px)}
+.btn-outline {background:transparent;color:var(--deep)}
+.nav {display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
+#pinScreen {background:radial-gradient(ellipse,var(--cream),var(--foam))}
+#pinInput {width:100%;padding:15px;border:1px solid #c8b496;border-radius:30px;text-align:center;font-size:22px;letter-spacing:9px;background:var(--cream);color:var(--deep)}
+#pinMessage {min-height:25px;font-size:12px;margin-top:15px}
+.album-scene {width:min(280px,75vw);height:320px;margin:32px auto;perspective:1100px}
+.album {position:relative;width:100%;height:100%;transform-style:preserve-3d}
+.album-page {position:absolute;inset:0;background:#f8eddc;border:8px solid #e0ccb0;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 40px #315b6625}
+.album-cover {position:absolute;inset:0;z-index:3;background:linear-gradient(135deg,var(--deep),var(--sea));color:var(--cream);border:3px solid var(--gold);transform-origin:left center;transition:transform 1.5s ease;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:25px}
+.album-cover h2 {margin:18px 0;font-size:42px}
+.album-cover small {letter-spacing:3px;font-size:9px}
+.album.open .album-cover {transform:rotateY(-160deg)}
+#flower-layer {position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:50}
+.flower {position:absolute;left:50%;top:50%;animation:bloom 2.7s ease forwards}
+@keyframes bloom {
+  0% {opacity:0;transform:translate(0,0) scale(.1)}
+  15%,65% {opacity:1}
+  100% {opacity:0;transform:translate(var(--x),var(--y)) rotate(360deg) scale(1.2)}
+}
+#pageGame {background:#e7efec}
+.shell-options {display:flex;justify-content:center;gap:20px;margin:30px auto}
+.shell {width:clamp(75px,20vw,125px);height:clamp(90px,24vw,145px);border:1px solid #d0c0a9;border-radius:50%;background:linear-gradient(140deg,#fffaf1,#dfc8a8);font-size:38px}
+#gameMessage {min-height:45px;font-size:13px;line-height:1.8;margin:15px auto}
+#page2 {background:linear-gradient(135deg,#fffaf1,#f1e6d6)}
+.letter {max-width:660px;margin:28px auto;padding:clamp(24px,6vw,50px);background:#fffdf8;border:1px solid #e7d7bf;box-shadow:0 20px 50px #315b6610;text-align:left;line-height:2;font-size:13px;font-weight:300}
+.letter p {margin-bottom:17px}
+#page3 {background:#e7efec}
+.gallery {display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:32px auto}
+.photo-card {background:#fffaf1;padding:8px 8px 15px;box-shadow:0 12px 25px #315b6612;transition:.3s}
+.photo-card:hover {transform:translateY(-6px)}
+.photo-card img {display:block;width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--sand)}
+.photo-card p {margin-top:10px;font-family:"Cormorant Garamond",serif;font-size:18px;font-style:italic}
+#pageVideo {background:linear-gradient(145deg,#fffaf1,#dce9e7)}
+.video-frame {max-width:680px;margin:28px auto;padding:10px;background:white}
+.video-frame video {display:block;width:100%;max-height:65vh;background:var(--foam)}
+@keyframes reveal {from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px) {
+  .gallery {grid-template-columns:repeat(2,1fr);gap:10px}
+  .page {padding:35px 15px}
+}
+</style>
+</head>
+<body>
+<div id="flower-layer"></div>
+
+<!-- HALAMAN PIN -->
+<section id="pinScreen" class="page active">
+  <div class="container">
+    <div style="font-size:52px">🐚</div>
+    <div class="eyebrow">A little secret for you</div>
+    <h1>Only for <span class="italic">you ♡</span></h1>
+    <p class="description">Ada sesuatu yang aku siapkan khusus untuk kamu. Masukkan kode rahasianya untuk membuka hadiah ini.</p>
+    <form id="pinForm" style="max-width:280px;margin:auto">
+      <input id="pinInput" type="password" inputmode="numeric" maxlength="6" placeholder="PIN rahasia" required>
+      <button class="btn" style="width:100%;margin-top:15px">Buka hadiah ♡</button>
+    </form>
+    <p id="pinMessage"></p>
+    <div class="footer">A SECRET MADE WITH LOVE</div>
+  </div>
+</section>
+
+<!-- HALAMAN ULANG TAHUN -->
+<section class="page" id="page1">
+  <div class="container">
+    <div class="eyebrow">A little something for your special day</div>
+    <h1>Happy 23rd Birthday,<br><span class="italic">My Love.</span></h1>
+    <p class="description">Untuk Diyanti Nazmi Azizah, sayangku. Ada hadiah kecil dan banyak doa yang aku siapkan khusus untuk ulang tahunmu yang ke-23. 🤍</p>
+    <div class="album-scene">
+      <div class="album" id="album">
+        <div class="album-page">
+          <span>A NOTE FOR YOU</span>
+          <h3>To My<br><span class="italic">Favorite Person</span></h3>
+          <span style="font-size:35px">♡</span>
+        </div>
+        <div class="album-cover">
+          <small>A SPECIAL EDITION</small>
+          <h2>For You,<br><i>With Love</i></h2>
+          <span style="font-size:42px">❀</span>
+          <small>OPEN YOUR GIFT</small>
+        </div>
+      </div>
+    </div>
+    <button class="btn" id="openAlbumBtn" onclick="openAlbum()">Buka album ♡</button>
+    <div class="footer">MADE WITH LOVE, JUST FOR YOU</div>
+  </div>
+</section>
+
+<!-- MINI GAME -->
+<section class="page" id="pageGame">
+  <div class="container">
+    <div class="eyebrow">A tiny birthday game</div>
+    <h2>Find the <span class="italic">Little Heart</span></h2>
+    <p class="description">Ada hati kecil yang bersembunyi di balik salah satu kerang. Pilih satu dan temukan hadiah rahasianya.</p>
+    <div class="shell-options">
+      <button class="shell" onclick="chooseShell(0)">🐚</button>
+      <button class="shell" onclick="chooseShell(1)">🐚</button>
+      <button class="shell" onclick="chooseShell(2)">🐚</button>
+    </div>
+    <p id="gameMessage">Pilih salah satu kerang, sayang ♡</p>
+    <button class="btn btn-outline" onclick="resetGame()">Coba lagi</button>
+    <div class="nav">
+      <button class="btn" id="continueGame" onclick="showPage('page2')" hidden>Lanjut ke surat cinta →</button>
+    </div>
+  </div>
+</section>
+
+<!-- SURAT CINTA -->
+<section class="page" id="page2">
+  <div class="container">
+    <div class="eyebrow">Words from my heart</div>
+    <h2>A Letter <span class="italic">For You</span></h2>
+    <div class="letter">
+      <h3 style="margin-bottom:25px">Message 🤍</h3>
+      <p>happy 23rd birthday, sayangku. 🤍</p>
+      <p>welcome to 23, yaa. semoga di umur yang baru ini kamu selalu diberikan panjang umur, kesehatan, rezeki yang lancar dan berlimpah, serta semoga semua impian dan cita-cita yang selama ini kamu usahakan bisa tercapai satu per satu. semoga apa pun yang sedang kamu perjuangkan sekarang bisa berakhir dengan hasil yang bikin kamu bangga sama diri sendiri.</p>
+      <p>aku juga berharap kamu selalu bahagia, dikelilingi orang-orang baik yang tulus sama kamu, dan dijauhkan dari hal-hal yang bisa bikin kamu kehilangan senyum kamu. semoga di umur yang baru ini, hal-hal baik selalu mengelilingi kamu, banyak kabar baik yang datang, banyak kesempatan baru yang bisa kamu ambil, dan lebih banyak alasan buat bersyukur atas semua yang kamu punya.</p>
+      <p>semoga kamu makin dewasa dalam menghadapi apa pun, makin kuat saat keadaan nggak sesuai harapan, makin sabar sama proses yang sedang kamu jalanin, dan tentunya makin rajin ibadah, makin dekat sama Allah, serta selalu diberikan kemudahan dalam setiap langkah kamu. semoga kamu juga makin sayang sama diri sendiri, makin sayang sama aku, makin sayang sama orang tua, dan makin sayang sama adik-adik kamu. semoga kamu bisa terus jadi kebanggaan keluarga dan jadi versi terbaik dari diri kamu sendiri.</p>
+      <p>di umur 23 ini, aku nggak berharap hidup kamu bakal selalu mudah atau semuanya berjalan sesuai keinginan kamu. aku cuma berharap, kalaupun nanti ada hari-hari yang berat, kamu selalu punya kekuatan buat melewatinya dan nggak pernah ngerasa sendirian. semoga kamu selalu punya tempat buat cerita, tempat buat pulang, dan seseorang yang bisa nemenin kamu dalam keadaan apa pun.</p>
+      <p>thank you for being you and for being part of my life. aku bersyukur bisa kenal kamu, bisa sayang sama kamu, dan bisa jadi bagian dari perjalanan hidup kamu sampai hari ini. aku mungkin belum bisa kasih semua yang kamu inginkan, tapi aku akan selalu berusaha buat jadi seseorang yang bisa bikin kamu ngerasa dicintai, dihargai, dan ditemenin.</p>
+      <p>semoga di umur yang baru ini hubungan kita juga makin baik, makin dewasa, makin saling ngerti, makin sabar satu sama lain, dan makin kuat buat menghadapi apa pun yang datang. semoga kita nggak cuma jadi dua orang yang saling sayang, tapi juga dua orang yang bisa saling dukung buat tumbuh dan meraih impian masing-masing.</p>
+      <p>sekali lagi, happy birthday, my favorite person. semoga semua hal baik yang kamu doakan diam-diam bisa segera jadi kenyataan. semoga Allah selalu jaga kamu di mana pun kamu berada, lancarkan rezeki kamu, sehatkan badan kamu, tenangkan hati kamu, dan bahagiakan hidup kamu dengan cara-cara yang nggak pernah kamu sangka. i lofff u sayangggggg 🤍</p>
+    </div>
+    <div class="nav">
+      <button class="btn btn-outline" onclick="showPage('pageGame')">← Kembali</button>
+      <button class="btn" onclick="showPage('page3')">Lihat kenangan kita →</button>
+    </div>
+  </div>
+</section>
+
+<!-- GALERI FOTO -->
+<section class="page" id="page3">
+  <div class="container">
+    <div class="eyebrow">Little moments, forever memories</div>
+    <h2>Our Little <span class="italic">World</span></h2>
+    <p class="description">Beberapa potongan cerita yang ingin aku simpan lebih lama. ♡</p>
+    <div class="gallery">
+      <div class="photo-card"><img src="foto/foto1.jpg" alt="Kenangan 1"><p>My favorite moment</p></div>
+      <div class="photo-card"><img src="foto/foto2.jpg" alt="Kenangan 2"><p>Just you</p></div>
+      <div class="photo-card"><img src="foto/foto3.jpg" alt="Kenangan 3"><p>Little happiness</p></div>
+      <div class="photo-card"><img src="foto/foto4.jpg" alt="Kenangan 4"><p>One for the books</p></div>
+      <div class="photo-card"><img src="foto/foto5.jpg" alt="Kenangan 5"><p>My kind of home</p></div>
+      <div class="photo-card"><img src="foto/foto6.jpg" alt="Kenangan 6"><p>And many more ♡</p></div>
+    </div>
+    <div class="nav">
+      <button class="btn btn-outline" onclick="showPage('page2')">← Surat cinta</button>
+      <button class="btn" onclick="showPage('pageVideo')">Putar video ▶</button>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO KENANGAN -->
+<section class="page" id="pageVideo">
+  <div class="container">
+    <div class="eyebrow">A moving memory of us</div>
+    <h2>Our Story in<br><span class="italic">Motion ♡</span></h2>
+    <p class="description">Beberapa detik yang ingin aku simpan selamanya.</p>
+    <div class="video-frame">
+      <video controls playsinline preload="metadata">
+        <source src="video-kenangan.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video ini.
+      </video>
+    </div>
+    <p class="description">Semoga masih banyak cerita indah yang bisa kita buat bersama. ♡</p>
+    <div class="nav">
+      <button class="btn btn-outline" onclick="showPage('page3')">← Galeri foto</button>
+      <button class="btn" onclick="showPage('page1')">Kembali ke awal ♡</button>
+    </div>
+  </div>
+</section>
+
+<audio id="birthdayMusic" src="happy-birthday.mp3" loop></audio>
+
+<script>
+const CORRECT_PIN = '101003';
+let albumOpened = false;
+let heartLocation = Math.floor(Math.random() * 3);
+let gameFinished = false;
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+  const target = document.getElementById(id);
+  if (!target) return;
+  target.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+document.getElementById('pinForm').addEventListener('submit',function(e) {
+  e.preventDefault();
+  const input = document.getElementById('pinInput');
+  const message = document.getElementById('pinMessage');
+
+  if (input.value === CORRECT_PIN) {
+    message.textContent = 'Benar! Hadiah kecilmu menunggu ♡';
+    message.style.color = '#315b66';
+    input.value = '';
+    setTimeout(() => showPage('page1'), 500);
+  } else {
+    message.textContent = 'PIN belum tepat. Coba lagi, sayang ♡';
+    message.style.color = '#9b5b56';
+    input.value = '';
+    input.focus();
+  }
+});
+
+function openAlbum() {
+  if (albumOpened) return;
+  albumOpened = true;
+  document.getElementById('album').classList.add('open');
+
+  const button = document.getElementById('openAlbumBtn');
+  button.disabled = true;
+  button.textContent = 'Satu kejutan untukmu ♡';
+
+  const music = document.getElementById('birthdayMusic');
+  music.volume = 0.65;
+  music.play().catch(() => {});
+
+  burstFlowers();
+  setTimeout(() => showPage('pageGame'), 2700);
+}
+
+function burstFlowers() {
+  const layer = document.getElementById('flower-layer');
+  const items = ['🌸','🌷','🌼','🌺','✿','♡','✨'];
+
+  for (let i=0;i<65;i++) {
+    const flower = document.createElement('span');
+    flower.className = 'flower';
+    flower.textContent = items[Math.floor(Math.random()*items.length)];
+    flower.style.setProperty('--x',`${(Math.random()-.5)*innerWidth*1.4}px`);
+    flower.style.setProperty('--y',`${(Math.random()-.5)*innerHeight*1.5}px`);
+    flower.style.animationDelay = `${Math.random()*.5}s`;
+    flower.style.fontSize = `${18+Math.random()*25}px`;
+    layer.appendChild(flower);
+    setTimeout(() => flower.remove(),3500);
+  }
+}
+
+function chooseShell(index) {
+  if (gameFinished) return;
+  const shells = document.querySelectorAll('.shell');
+  const message = document.getElementById('gameMessage');
+
+  if (index === heartLocation) {
+    shells[index].textContent = '💖';
+    message.textContent = 'Kamu menemukannya! Hati kecil ini memang untuk kamu ♡';
+    gameFinished = true;
+    shells.forEach(shell => shell.disabled = true);
+    document.getElementById('continueGame').hidden = false;
+  } else {
+    shells[index].textContent = '🫧';
+    shells[index].disabled = true;
+    message.textContent = 'Belum ketemu, coba kerang yang lain ya ♡';
+  }
+}
+
+function resetGame() {
+  document.querySelectorAll('.shell').forEach(shell => {
+    shell.textContent = '🐚';
+    shell.disabled = false;
+  });
+  heartLocation = Math.floor(Math.random()*3);
+  gameFinished = false;
+  document.getElementById('gameMessage').textContent = 'Pilih salah satu kerang, sayang ♡';
+  document.getElementById('continueGame').hidden = true;
+}
+</script>
+</body>
+</html>
